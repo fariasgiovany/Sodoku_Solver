@@ -1,0 +1,11 @@
+services:
+  
+  
+  back:
+    image: backendsudoku
+    ports:
+    - 8000:8000
+
+  
+volumes:
+  pgdata:
