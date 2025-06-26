@@ -2,9 +2,24 @@ services:
   
   
   back:
-    image: backendsudoku
+    build:
+      context:  ./backend
+      dockerfile: dockerfile
     ports:
     - 8000:8000
+    volumes:
+      - ./backend:/app
+  
+  front:
+    build:
+      context: ./frontend/sudokufront
+      dockerfile: dockerfile
+    ports:
+    - 3000:3000
+    volumes:
+      - .frontend/sudokufront:/app
+    depends_on:
+    - back
 
   
 volumes:
