@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from solver import SudokuSolver
 from fastapi import Body,Path
 #para rodar o servidor: uvicorn main:app --reload
+#para testar fastapi run main.py
 app = FastAPI()
 
 @app.get("/")
