@@ -17,7 +17,8 @@ services:
     ports:
     - 3000:3000
     volumes:
-      - .frontend/sudokufront:/app
+      - ./frontend/sudokufront:/app
+    
     depends_on:
     - back
 

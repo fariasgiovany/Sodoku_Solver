@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
   
   const body = await request.json();
   
-  const local = process.env.BACK_HOST || 'http://localhost:3000/api/receber';
+  const local = process.env.BACK_HOST || 'http://192.168.0.3:8000/api/receber';
   console.log('Sending data to:', local);
   const resultado = await fetch(local ,{method:"PUT", body:JSON.stringify(body), headers: {'Content-Type': 'application/json'}})
   const resposta = await resultado.json();

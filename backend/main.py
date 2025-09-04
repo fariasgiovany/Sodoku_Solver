@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from solver import SudokuSolver
 from fastapi import Body,Path
-
+#para rodar o servidor: uvicorn main:app --reload
 app = FastAPI()
 
 @app.get("/")
@@ -30,6 +30,7 @@ async def solve_problem(problem: list[int]= Body(
     """
     
     # Placeholder for solving the problem
+    print("Received problem:", problem)
     solver = SudokuSolver(problem)
     if solver.solve():
         solution = solver.get_solution()
